@@ -1,14 +1,25 @@
 const table = document.getElementById("matrix-table");
 const output = document.getElementById("output");
+const toggleIntroBtn = document.getElementById("toggle-intro-btn");
+const introductionBox = document.getElementById("introduction-box");
 
 // Function to Read Excel File
 async function loadExcel(filePath) {
-  const response = await fetch(filePath);
-  const arrayBuffer = await response.arrayBuffer();
-  const workbook = XLSX.read(arrayBuffer, { type: "array" });
-  const sheetName = workbook.SheetNames[0];
-  const worksheet = workbook.Sheets[sheetName];
-  return XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
+  try {
+    const response = await fetch(filePath);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const arrayBuffer = await response.arrayBuffer();
+    const workbook = XLSX.read(arrayBuffer, { type: "array" });
+    const sheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[sheetName];
+    return XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: "" });
+  } catch (error) {
+    console.error("Error loading Excel file:", error);
+    output.innerHTML = `<p style="color: red;">Failed to load data. Please try again later.</p>`;
+    return [];
+  }
 }
 
 // Function to Remove Empty Rows and Columns
@@ -45,6 +56,7 @@ function displayRow(headers, row) {
     }
   });
   output.innerHTML = displayHTML;
+  scrollToOutput();
 }
 
 // Function to Display Column Details
@@ -57,9 +69,15 @@ function displayColumn(headers, rows, colIndex) {
     }
   });
   output.innerHTML = displayHTML;
+  scrollToOutput();
 }
 
-// Add Event Listeners
+// Function to Scroll to the Output Section
+function scrollToOutput() {
+  document.getElementById("display-section").scrollIntoView({ behavior: "smooth" });
+}
+
+// Add Event Listeners to Table Headers
 function addClickListeners(headers, rows) {
   table.addEventListener("click", (e) => {
     const rowIndex = e.target.getAttribute("data-row");
@@ -70,10 +88,22 @@ function addClickListeners(headers, rows) {
   });
 }
 
+// Toggle Introduction Visibility
+toggleIntroBtn.addEventListener("click", () => {
+  if (introductionBox.classList.contains("hidden")) {
+    introductionBox.classList.remove("hidden");
+    toggleIntroBtn.textContent = "Click to hide introduction (recommended)";
+  } else {
+    introductionBox.classList.add("hidden");
+    toggleIntroBtn.textContent = "Click to expand introduction";
+  }
+});
+
 // Initialize the Table
 async function init() {
-  const filePath = "matrix.xlsx"; // Replace with your file path
+  const filePath = "matrix.xlsx"; // Replace with your file path or use "matrix.json" if converted
   let data = await loadExcel(filePath);
+  if (data.length === 0) return; // Stop if data failed to load
   data = cleanData(data); // Remove empty rows
   const headers = data[0];
   const rows = data.slice(1);
