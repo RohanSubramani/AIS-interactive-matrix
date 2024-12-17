@@ -1,0 +1,103 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0c0f14;
+    color: #cfe9f3; /* Slightly darker text color */
+  }
+  
+  h1, h2, h3 {
+    color: #ffffff; /* Darker blue */
+    text-align: center;
+    margin: 10px 0;
+    text-shadow: 0 0 25px #79d8f0;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+    overflow: hidden;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #222;
+    color: #b0d8e6; /* Darker blue */
+    transition: all 0.3s ease;
+  }
+  
+  /* First Row and Column - Brighter */
+  th:first-child, td:first-child, tr:first-child th, tr:first-child td {
+    background: linear-gradient(145deg, #006699, #00bcd4); /* Bright blue */
+    color: #ffffff; /* White text for contrast */
+    font-weight: bold;
+    text-shadow: 0 0 5px #00e6ff;
+  }
+  
+  th:first-child:hover, tr:first-child th:hover {
+    background: #0099cc; /* Slightly darker hover */
+    box-shadow: 0 0 10px #00e6ff;
+  }
+  
+  th {
+    background: linear-gradient(145deg, #002c3e, #004466); /* Darker blues */
+    color: #99c9e6; /* Medium blue text */
+    cursor: pointer;
+  }
+  
+  th:hover {
+    background: #0077b6; /* Hover dark blue */
+    color: #e0f7fa;
+    box-shadow: 0 0 8px #0077b6;
+  }
+  
+  td {
+    background: #1a2531; /* Darker table cells */
+  }
+  
+  tr:hover td {
+    background: #22303f;
+    box-shadow: 0 0 5px #005577;
+  }
+  
+  /* Output Section */
+  #display-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #121921;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+  }
+  
+  #output h2, #output h3 {
+    text-align: center;
+    color: #0b967f; /* Darker blue headings */
+    text-shadow: 0 0 0px #00e6ff;
+  }
+  
+  #output p {
+    margin: 10px 0;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  
+  #output strong {
+    color: #0b967f; /* Slightly brighter for emphasis */
+    font-weight: bold;
+    /* text-shadow: 0 0 5px #00e6ff; */
+  }
+  
