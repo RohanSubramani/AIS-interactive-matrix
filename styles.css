@@ -13,6 +13,20 @@ body, html {
   color: #cfe9f3; /* Slightly darker text color */
 }
 
+/* Author Names */
+.authors {
+text-align: center; /* Center the text below the title */
+margin-top: 5px;    /* Small gap between the title and authors */
+font-size: 0.9rem;  /* Smaller font size */
+color: #99aab5;     /* Subtle grayish-blue color */
+}
+
+.author-name {
+font-weight: 500;  /* Medium weight for names */
+color: #b0d8e6;    /* Slightly brighter text for the names */
+}
+  
+
 h1, h2, h3 {
   color: #ffffff; /* Darker blue */
   text-align: center;
