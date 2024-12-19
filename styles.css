@@ -9,31 +9,32 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0c0f14;
-  color: #cfe9f3; /* Slightly darker text color */
+  background-color: #ffffff; /* White background */
+  color: #4a4a4a; /* Neutral grey for text */
 }
 
 /* Author Names */
 .authors {
-text-align: center; /* Center the text below the title */
-margin-top: 5px;    /* Small gap between the title and authors */
-font-size: 0.9rem;  /* Smaller font size */
-color: #99aab5;     /* Subtle grayish-blue color */
+  text-align: center; /* Center the text below the title */
+  margin-top: 5px;    /* Small gap between the title and authors */
+  font-size: 0.9rem;  /* Smaller font size */
+  color: #6b6b6b;     /* Subtle grey color for authors */
 }
 
 .author-name {
-font-weight: 500;  /* Medium weight for names */
-color: #b0d8e6;    /* Slightly brighter text for the names */
+  font-weight: 500;  /* Medium weight for names */
+  color: #4a4a4a;    /* Slightly darker text for names */
 }
-  
 
+/* Headings */
 h1, h2, h3 {
-  color: #ffffff; /* Darker blue */
+  color: #2c2c2c; /* Dark grey for headings */
   text-align: center;
   margin: 10px 0;
-  text-shadow: 0 0 25px #79d8f0;
+  font-weight: bold;
 }
 
+/* Container */
 .container {
   width: 100%;
   padding: 20px;
@@ -42,8 +43,8 @@ h1, h2, h3 {
 /* Centered Content */
 .centered-content {
   margin: 0 auto; /* Center the content */
-  max-width: 40%; /* Limit text width to 70% of the container */
-  text-align: left; /* Align text to the left for readability */
+  max-width: 40%; /* Limit text width for readability */
+  text-align: left;
 }
 
 @media (max-width: 1200px) {
@@ -58,29 +59,24 @@ h1, h2, h3 {
   }
 }
 
-.code-block {
-    white-space: pre-wrap; /* Wraps long lines while preserving whitespace */
-    word-wrap: break-word; /* Ensures long words don't overflow */
-    overflow-x: hidden;    /* Prevents horizontal scrollbars */
-}
-
-/* Introduction Box Styles */
-.introduction-box {
-  background-color: #1a2531;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
-  /* margin-bottom: 20px; */
-}
-
 /* Code Block Styling */
 .code-block {
-  background-color: #22303f;
+  background-color: #f9f9f9;
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
   font-family: 'Courier New', Courier, monospace;
-  color: #cfe9f3;
+  color: #4a4a4a;
+  border: 1px solid #e0e0e0; /* Light border for code block */
+}
+
+/* Introduction Box Styles */
+.introduction-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0; /* Subtle border */
+  /* margin-bottom: 10px; */
 }
 
 /* Toggle Button Styles */
@@ -89,8 +85,8 @@ h1, h2, h3 {
   margin-bottom: 20px;
   padding: 8px 16px;
   background-color: transparent;
-  color: #99c9e6;
-  border: 2px solid #99c9e6;
+  color: #4a4a4a; /* Grey text */
+  border: 2px solid #4a4a4a;
   border-radius: 5px;
   cursor: pointer;
   font-size: 0.9rem;
@@ -98,8 +94,8 @@ h1, h2, h3 {
 }
 
 .toggle-btn:hover {
-  background-color: #99c9e6;
-  color: #0c0f14;
+  background-color: #4a4a4a;
+  color: #ffffff; /* White text on hover */
 }
 
 /* Sage Green Button */
@@ -117,8 +113,8 @@ h1, h2, h3 {
 }
 
 .sage-btn:hover {
-background-color: #88b98b;
-color: #0c0f14;
+  background-color: #88b98b;
+  color: #ffffff; /* White text on hover */
 }
 
 /* Table Styles */
@@ -126,79 +122,74 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
-  background: linear-gradient(145deg, #0f172a, #1e293b);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
-  overflow: hidden;
+  background: #ffffff; /* White table background */
+  border-radius: 5px;
+  border: 1px solid #dcdcdc; /* Light border around the table */
 }
 
 th, td {
   padding: 12px;
   text-align: center;
-  border: 1px solid #222;
-  color: #b0d8e6; /* Darker blue */
-  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0; /* Light grey border */
+  color: #4a4a4a; /* Neutral grey for text */
 }
 
-/* First Row and Column - Brighter */
-th:first-child, td:first-child, tr:first-child th, tr:first-child td {
-  background: linear-gradient(145deg, #006699, #00bcd4); /* Bright blue */
-  color: #ffffff; /* White text for contrast */
-  font-weight: bold;
-  text-shadow: 0 0 5px #00e6ff;
-}
-
-th:first-child:hover, tr:first-child th:hover {
-  background: #0099cc; /* Slightly darker hover */
-  box-shadow: 0 0 10px #00e6ff;
-}
-
+/* Table Header Cells (Column Headings) */
 th {
-  background: linear-gradient(145deg, #002c3e, #004466); /* Darker blues */
-  color: #99c9e6; /* Medium blue text */
-  cursor: pointer;
+    background: #edf2fa; /* Soft blue background */
+    font-weight: bold;
+    color: #2c2c2c; /* Dark grey text */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 th:hover {
-  background: #0077b6; /* Hover dark blue */
-  color: #e0f7fa;
-  box-shadow: 0 0 8px #0077b6;
+    background: #d4e4f5; /* Slightly darker blue on hover */
+}
+
+/* Row Header Cells */
+th:first-child {
+    background: #edf2fa; /* Same soft blue as column headings */
+    color: #2c2c2c; /* Dark grey text for consistency */
+    font-weight: bold;
+}
+
+th:first-child:hover {
+    background: #d4e4f5; /* Slightly darker blue on hover */
 }
 
 td {
-  background: #1a2531; /* Darker table cells */
+  background: #ffffff; /* Pure white background for cells */
 }
 
-tr:hover td {
-  background: #22303f;
-  box-shadow: 0 0 5px #005577;
-}
+/* tr:hover td {
+  background: #f9f9f9; 
+} */
 
 /* Display Section */
 #display-section {
   margin: 30px auto 20px auto;
   padding: 20px;
-  background: #121921;
+  background: #f5f5f5;
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+  border: 1px solid #e0e0e0;
 }
 
 #output h2, #output h3 {
   text-align: center;
-  color: #0b967f; /* Darker blue headings */
-  text-shadow: 0 0 0px #00e6ff;
+  color: #2c2c2c; /* Dark grey headings */
 }
 
 #output p {
   margin: 10px 0;
   line-height: 1.6;
   font-size: 1rem;
+  color: #4a4a4a; /* Grey for paragraph text */
 }
 
 #output strong {
-  color: #0b967f; /* Slightly brighter for emphasis */
+  color: #2c2c2c; /* Darker grey for emphasized text */
   font-weight: bold;
-  /* text-shadow: 0 0 5px #00e6ff; */
 }
 
 /* Hidden Elements */
