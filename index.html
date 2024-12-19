@@ -23,32 +23,30 @@
       <h2>Introduction</h2>
       <div id="introduction">
         <p>
-            We believe that AGI could soon be achieved with foundation model agents (FMAs): systems like AutoGPT and Devin that equip foundation models with memory, tool use, and other affordances so they can perform multi-step tasks autonomously. As such, we should carefully consider how classic AGI risk arguments might play out if we get AGI with FMAs.
+            We believe that AGI could soon be achieved with foundation model agents (FMAs): systems like AutoGPT and Devin that equip foundation models with memory, tool use, and other affordances so they can perform multi-step tasks autonomously. In this post, we try to systematically analyze how different behavior-shaping mechanisms for FMAs could make things go well or poorly. 
+            <!-- More specifically, we enumerate behavior-shaping mechanisms and qualitative outcomes (i.e. ways things could go well or poorly), then execute the following nested for loop. -->
         </p>
-        <p>
-          In this post, we try to systematically analyze how each behavior-shaping mechanism could make things go well or poorly. More specifically, we enumerate behavior-shaping mechanisms and qualitative outcomes (i.e. ways things could go well or poorly), then execute the following nested for loop.
-        </p>
-        <div class="indented-code">
+        <!-- <div class="indented-code">
             For each behavior-shaping mechanism B:<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For each qualitative outcome Q:<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How can B make Q more or less likely if we get AGI with FMAs?<br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How strong are these effects?
-        </div>        
+        </div>         -->
         <p>
-          The <strong>behavior-shaping mechanisms</strong> we consider are:
+            The <strong>behavior-shaping mechanisms</strong> we consider are pretraining, finetuning, whitebox interventions, scaffolding, inputs, and learning / reasoning / goal revision at runtime.
         </p>
-        <ol>
+        <!-- <ol>
           <li>Pretraining</li>
           <li>Finetuning</li>
           <li>Whitebox interventions</li>
           <li>Scaffolding</li>
           <li>Inputs</li>
           <li>Learning / reasoning / goal-revision at runtime</li>
-        </ol>
+        </ol> -->
         <p>
-          The <strong>qualitative outcomes</strong> we consider are:
+          The <strong>qualitative outcomes</strong> we examine are malicious use, robustness failures to natural adversarial inputs, scheming / rogue AI, hidden serial reasoning, the phenomenon of "you get what you measure," multi-agent conflict, and successful alignment with a “Do What I Mean and Check” (DWIMAC) alignment target.
         </p>
-        <ol>
+        <!-- <ol>
           <li>Malicious use</li>
           <li>Robustness failures to natural adversarial inputs</li>
           <li>Scheming / rogue AI</li>
@@ -56,12 +54,15 @@
           <li>You get what you measure</li>
           <li>Multi-agent conflict</li>
           <li>Successful alignment with a “Do What I Mean and Check” (DWIMAC) alignment target</li>
-        </ol>
+        </ol> -->
         <p>
-          Our analysis is presented in the following matrix. You can read the consequences of a particular behavior-shaping mechanism on all threat models by looking across that row in the matrix, and you can read the behavior-shaping mechanisms that affect each threat model by looking down that column of the matrix. Clicking on a row or column heading will display the contents of that row/column above the matrix. Each row and column begins with a summary.
+          Our analysis is presented in the following matrix. <strong>Clicking on a row or column heading will display the contents of that row/column above the matrix.</strong> Each row and column begins with a summary.
         </p>
         <p>
-          We originally planned to do a more detailed analysis for each behavior-shaping mechanism and qualitative outcome, but we thought a shallow survey would also be valuable and that we could use feedback on our preliminary thoughts. So, please give us feedback! This matrix has several hot takes and tries to cover a lot of different AI safety topics, so there should be plenty for you to agree or disagree with. We don't have comments set up on this website, so we'd appreciate comments on our LessWrong linkpost (see the button below).
+            If you are short on time, we recommend you start by clicking on the summary row and/or summary column.
+        </p>
+        <p>
+          <strong>We would love feedback!</strong> What do you agree and disagree with? What did we miss? We don't have comments set up on this website, so we'd appreciate comments on our LessWrong linkpost (see the button below).
         </p>
       </div>
     </div>
